@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Student Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+        header {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        main {
+            width: 80%;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        .event-card {
+            background: #f1f1f1;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, color 0.3s;
+        }
+        .event-card h3 {
+            color: #ff6a00;
+        }
+        input {
+            margin-top: 10px;
+            padding: 10px;
+            width: 90%;
+            border: 2px solid #ff6a00;
+            border-radius: 8px;
+            background: #fff;
+            color: #212529;
+            font-size: 16px;
+        }
+        button {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #ee0979;
+            box-shadow: 0 4px 10px rgba(238, 9, 121, 0.4);
+        }
+        footer {
+            background: #f1f1f1;
+            color: #212529;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #212529;
+            color: #f8f9fa;
+        }
+        .dark-mode header {
+            background: #222;
+        }
+        .dark-mode main {
+            background: #333;
+        }
+        .dark-mode .event-card {
+            background: #444;
+            color: #f8f9fa;
+        }
+        .dark-mode .event-card h3 {
+            color: #ff9a00;
+        }
+        .dark-mode input {
+            background: #555;
+            color: #f8f9fa;
+            border-color: #ff9a00;
+        }
+        .dark-mode button {
+            background: #ff9a00;
+        }
+        .dark-mode footer {
+            background: #222;
+            color: #f8f9fa;
+        }
+        /* Navbar Container */
+header {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+/* Nav Links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar Links */
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover & Active Effects */
+nav ul li a:hover, nav ul li a.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode Styles */
+.dark-mode header {
+    background: linear-gradient(135deg, #222, #444);
+}
+
+.dark-mode nav ul {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode nav ul li a {
+    color: #ffeb3b;
+}
+
+.dark-mode nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    background: #ffeb3b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#dark-mode-toggle:hover {
+    background: #222;
+    color: white;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav ul li {
+        display: block;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="groups.html">Study Groups</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+   
+    
+    
+    <main>
+        <h2>🎉 Explore & Share Events</h2>
+        <p>Stay updated with the latest student events and activities! 🚀</p>
+
+        <input type="text" id="event-name" placeholder="🏷️ Event name...">
+        <input type="date" id="event-date">
+        <input type="text" id="event-location" placeholder="📍 Location...">
+        <button onclick="addEvent()">➕ Add Event</button>
+
+        <div id="event-list">
+            <div class="event-card">
+                <h3>💻 Hackathon 2025</h3>
+                <p>📅 Date: June 15, 2025</p>
+                <p>📍 Location: University Hall</p>
+            </div>
+            <div class="event-card">
+                <h3>🤖 AI Workshop</h3>
+                <p>📅 Date: July 10, 2025</p>
+                <p>📍 Location: Innovation Lab</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 🎓 The Best Student Interaction Platform - Built for Students, by Students. 🚀🔥</p>
+    </footer>
+
+    <script>
+        function addEvent() {
+            const name = document.getElementById('event-name').value;
+            const date = document.getElementById('event-date').value;
+            const location = document.getElementById('event-location').value;
+
+            if (!name || !date || !location) {
+                alert("⚠️ Please fill all fields!");
+                return;
+            }
+
+            const eventList = document.getElementById('event-list');
+            const eventCard = document.createElement('div');
+            eventCard.classList.add('event-card');
+
+            eventCard.innerHTML = `
+                <h3>🎭 ${name}</h3>
+                <p>📅 Date: ${date}</p>
+                <p>📍 Location: ${location}</p>
+            `;
+
+            eventList.appendChild(eventCard);
+
+            document.getElementById('event-name').value = "";
+            document.getElementById('event-date').value = "";
+            document.getElementById('event-location').value = "";
+        }
+
+        // Function to check and apply dark mode from localStorage
+        function applyDarkModeSetting() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('header').classList.add('dark-mode');
+                document.querySelector('main').classList.add('dark-mode');
+                document.querySelector('footer').classList.add('dark-mode');
+                document.querySelectorAll('.event-card').forEach(card => card.classList.add('dark-mode'));
+            }
+        }
+
+        // Apply dark mode settings on page load
+        window.onload = applyDarkModeSetting;
+    </script>
+</body>
+</html>
