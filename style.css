@@ -1,0 +1,243 @@
+/* 🎨 General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 0.4s ease-in-out, color 0.4s;
+}
+
+/* 🏆 Header */
+header {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* 🛠️ Navigation Bar */
+nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
+nav ul li {
+    margin: 10px 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* 🚀 Hero Section */
+.hero {
+    padding: 50px 20px;
+}
+.hero h2 {
+    font-size: 36px;
+}
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* ✅ Get Started Button */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0px 6px 15px rgba(255, 106, 0, 0.4);
+}
+.cta-button:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(255, 106, 0, 0.6);
+}
+
+/* 📌 Feature Section */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* 🔹 Feature Boxes */
+.feature-box {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    border-left: 6px solid #ff6a00;
+}
+.feature-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔸 Feature Icons */
+.feature-box i {
+    font-size: 40px;
+    color: #ff6a00;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Feature Titles */
+.feature-box h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #222;
+}
+
+/* 🔸 Feature Description */
+.feature-box p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 🌙 Dark Mode for Features */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+.dark-mode header {
+    background: linear-gradient(135deg, #444, #222);
+}
+.dark-mode nav ul {
+    background: rgba(255, 255, 255, 0.1);
+}
+.dark-mode nav ul li a {
+    color: #ffeb3b;
+}
+.dark-mode .feature-box {
+    background: #222;
+    color: white;
+    border-left: 6px solid #ffeb3b;
+}
+.dark-mode .feature-box i {
+    color: #ffeb3b;
+}
+.dark-mode .feature-box p {
+    color: #ddd;
+}
+
+/* 🌗 Dark Mode Toggle */
+#dark-mode-toggle {
+    background: #ffeb3b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+#dark-mode-toggle:hover {
+    background: #222;
+    color: white;
+}
+
+/* 🎤 Student Voices */
+.student-voices {
+    background: #f8f8f8;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 800px;
+}
+.voice-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+.voice-box p {
+    font-style: italic;
+    color: #444;
+}
+.dark-mode .student-voices {
+    background: #222;
+}
+.dark-mode .voice-box {
+    background: #121212;
+    color: white;
+}
+/* 🔹 Dark Mode for Feature Boxes */
+.dark-mode .feature-box {
+    background: #222;  /* Dark background */
+    color: white;  /* White text */
+    border-left: 6px solid #ffeb3b;
+}
+.dark-mode .feature-box h3 {
+    color: #ffeb3b; /* Yellow for titles */
+}
+.dark-mode .feature-box p {
+    color: #ddd; /* Light gray for descriptions */
+}
+ 
+
+/* 📅 Upcoming Events */
+.events {
+    margin: 30px 0;
+}
+.event-box {
+    display: inline-block;
+    background: #ff6a00;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.dark-mode .event-box {
+    background: #ffeb3b;
+    color: #222;
+}
+
+/* 🧑‍💻 Responsive Styles */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-box {
+        width: 90%;
+    }
+}

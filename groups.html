@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Groups - Collaboration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            transition: 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #1c1c1c;
+            color: #e4e4e4;
+        }
+        header {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+        .dark-mode header {
+            background: #222;
+        }
+        main {
+            width: 80%;
+            margin: 30px auto;
+            background: #ffffff;
+            color: #212529;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .dark-mode main {
+            background: #333;
+            color: #e4e4e4;
+        }
+        .group-box {
+            background: #f1f1f1;
+            color: #212529;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+        .dark-mode .group-box {
+            background: #444;
+            color: #e4e4e4;
+        }
+        .group-box:hover {
+            transform: scale(1.05);
+            background: #ffebcc;
+        }
+        .dark-mode .group-box:hover {
+            background: #555;
+        }
+        .create-group {
+            margin-top: 20px;
+            padding: 12px;
+            width: 95%;
+            border: 2px solid #ff6a00;
+            border-radius: 8px;
+            background: #fff;
+            color: #212529;
+        }
+        .dark-mode .create-group {
+            background: #666;
+            color: #e4e4e4;
+        }
+        button {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ee0979;
+            box-shadow: 0 4px 10px rgba(238, 9, 121, 0.4);
+        }
+        footer {
+            background: #f1f1f1;
+            color: #212529;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        .dark-mode footer {
+            background: #333;
+            color: #e4e4e4;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: 0.3s ease-in-out;
+        }
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: #ffeb3b;
+            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .dark-mode nav ul li a.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="groups.html" class="active">Study Groups</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Join or Create a Group</h2>
+        <p>Find like-minded students and collaborate on projects, discussions, and studies!</p>
+        
+        <input id="group-name" type="text" class="create-group" placeholder="Enter group name...">
+        <button onclick="createGroup()">Create Group</button>
+        
+        <div id="group-list"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Best Student Interaction Platform - Built for Students, by Students. 🚀🔥</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentPage = window.location.pathname.split("/").pop();
+            let navLinks = document.querySelectorAll("nav ul li a");
+
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+
+            if (localStorage.getItem('darkMode') === "true") {
+                document.body.classList.add('dark-mode');
+            }
+        });
+
+        let groups = [
+            {name: "Web Development Enthusiasts", members: 35, creator: "DevGuru"},
+            {name: "AI & Machine Learning", members: 50, creator: "AI_Genius"}
+        ];
+
+        function displayGroups() {
+            const groupList = document.getElementById('group-list');
+            groupList.innerHTML = "";
+            groups.forEach(group => {
+                const groupBox = document.createElement('div');
+                groupBox.classList.add('group-box');
+                groupBox.innerHTML = `
+                    <h3>${group.name}</h3>
+                    <p>Members: ${group.members} | Created by: ${group.creator}</p>
+                    <button onclick="joinGroup('${group.name}')">Join Group</button>
+                `;
+                groupList.appendChild(groupBox);
+            });
+        }
+
+        function createGroup() {
+            const groupName = document.getElementById('group-name').value;
+            if (!groupName.trim()) return alert("Enter a group name!");
+            groups.push({name: groupName, members: 1, creator: "You"});
+            displayGroups();
+            document.getElementById('group-name').value = "";
+        }
+
+        function joinGroup(groupName) {
+            const group = groups.find(g => g.name === groupName);
+            if (group) {
+                group.members++;
+                displayGroups();
+            }
+        }
+
+        window.onload = displayGroups;
+    </script>
+</body>
+</html>

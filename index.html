@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Interaction Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="groups.html">Study Groups</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <button id="dark-mode-toggle">🌙</button>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <h2 id="greeting-message">Welcome!</h2>
+            <p>Empowering students to connect, collaborate, and learn.</p>
+            <button class="cta-button" onclick="showToast('🎉 Welcome! Get Started Now!')">Get Started</button>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-box" onclick="showToast('📚 Join the Q&A Forum!')">
+                <h3>📚 Q&A Forum</h3>
+                <p>Ask and answer questions with peers.</p>
+            </div>
+            <div class="feature-box" onclick="showToast('🤝 Connect with Study Groups!')">
+                <h3>🤝 Study Groups</h3>
+                <p>Join or create study groups.</p>
+            </div>
+            <div class="feature-box" onclick="showToast('💬 Start Live Chat Now!')">
+                <h3>💬 Live Chat</h3>
+                <p>Engage in real-time discussions.</p>
+            </div>
+            <div class="feature-box">
+                <h3>📖 Resources</h3>
+                <p>Access study materials and helpful guides.</p>
+            </div>
+        
+            <!-- ✅ NEW: Events Box -->
+            <div class="feature-box">
+                <h3>📅 Events</h3>
+                <p>Stay updated on upcoming workshops and meetups.</p>
+            </div>
+        </section>
+
+        <!-- 🗣️ NEW: Student Testimonials -->
+        <section class="testimonials">
+            <h2>💬 Student Voices</h2>
+            <div class="testimonial-box">
+                <p>"This platform helped me ace my exams!" – ⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="testimonial-box">
+                <p>"I found an amazing study group for coding!" – ⭐⭐⭐⭐⭐</p>
+            </div>
+        </section>
+
+        <!-- 📅 NEW: Upcoming Events -->
+        <section class="events">
+            <h2>📅 Upcoming Events</h2>
+            <ul>
+                <li>📌 Webinar on AI – April 10, 2025</li>
+                <li>📌 Hackathon – April 15, 2025</li>
+                <li>📌 Career Fair – April 20, 2025</li>
+            </ul>
+        </section>
+    <!-- Toast Notification -->
+    <div id="toast"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Student Platform. Designed for students, by students.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

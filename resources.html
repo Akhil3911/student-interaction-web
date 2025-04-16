@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Resources - Student Interaction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff3e6;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navbar Styles (Forum Style) */
+        nav {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: #ffeb3b;
+            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        main {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            color: #212529;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .resource-box {
+            background: #ffe0cc;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .resource-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(238, 9, 121, 0.3);
+        }
+
+        .resource-box h3 {
+            color: #ff6a00;
+            transition: color 0.3s;
+        }
+
+        .resource-box:hover h3 {
+            color: #ee0979;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff6a00;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ee0979;
+        }
+
+        footer {
+            background: #ffe0cc;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            border-top: 2px solid #ff6a00;
+            font-size: 14px;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #212529;
+            color: #f8f9fa;
+        }
+
+        .dark-mode header {
+            background: linear-gradient(135deg, #333, #444);
+        }
+
+        .dark-mode main {
+            background: #333;
+            color: #f8f9fa;
+        }
+
+        .dark-mode .resource-box {
+            background: #444;
+        }
+
+        .dark-mode .resource-box h3 {
+            color: #ff9a00;
+        }
+
+        .dark-mode a {
+            color: #ff9a00;
+        }
+
+        .dark-mode footer {
+            background: #444;
+            border-top: 2px solid #ff9a00;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem('darkMode') === "true") {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="groups.html">Study Groups</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="resources.html" class="active">Resources</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    
+    <main>
+        <h2>🎉 Find Helpful Study Materials</h2>
+        <p>📖 Access handpicked resources to enhance your learning experience.</p>
+        
+        <div class="resource-box" onclick="window.open('https://www.geeksforgeeks.org/data-structures/', '_blank')">
+            <h3>💻 Data Structures & Algorithms</h3>
+            <p>Improve your DSA skills with these curated resources.</p>
+            <a href="https://www.geeksforgeeks.org/data-structures/" target="_blank">Visit GeeksforGeeks</a>
+        </div>
+        
+        <div class="resource-box" onclick="window.open('https://www.w3schools.com/python/', '_blank')">
+            <h3>🐍 Python Programming</h3>
+            <p>Master Python with interactive exercises and tutorials.</p>
+            <a href="https://www.w3schools.com/python/" target="_blank">Learn Python at W3Schools</a>
+        </div>
+        
+        <div class="resource-box" onclick="window.open('https://www.coursera.org/courses?query=machine%20learning', '_blank')">
+            <h3>🤖 Machine Learning & AI</h3>
+            <p>Deep dive into AI with hands-on projects and courses.</p>
+            <a href="https://www.coursera.org/courses?query=machine%20learning" target="_blank">Explore AI on Coursera</a>
+        </div>
+        
+        <div class="resource-box" onclick="window.open('https://codeforces.com/', '_blank')">
+            <h3>🏆 Competitive Programming</h3>
+            <p>Prepare for coding competitions with top practice platforms.</p>
+            <a href="https://codeforces.com/" target="_blank">Practice on Codeforces</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 The Best Student Interaction Platform - Your Learning Hub 🚀</p>
+    </footer>
+
+</body>
+</html>
